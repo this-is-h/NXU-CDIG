@@ -1,5 +1,5 @@
 <script setup>
-import { ref, watch } from 'vue'
+import { ref, watch, onMounted, onUnmounted } from 'vue'
 import { useRouter, useRoute } from 'vue-router';
 
 const router = useRouter();
@@ -28,7 +28,22 @@ watch(() => route.path, (newPath, oldPath) => {
     }
 });
 
-router.push('/home/main');
+// 处理系统返回事件（移动端）
+const handleClearSearch = () => {
+    // 当收到清除搜索的事件时，清空搜索值
+    searchValue.value = '';
+};
+
+onMounted(() => {
+    // 添加事件监听
+    window.addEventListener('clear-search', handleClearSearch);
+    router.push('/home/main');
+});
+
+onUnmounted(() => {
+    // 移除事件监听
+    window.removeEventListener('clear-search', handleClearSearch);
+});
 </script>
 
 <template>

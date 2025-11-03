@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted, watch } from 'vue'
+import { ref, onMounted, watch, onUnmounted } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
 
 import SvgIcon from '@jamescoyle/vue-icon'
@@ -11,7 +11,24 @@ const activeView = ref('home');
 const isDark = ref(false);
 const showBackButton = ref(false);
 
-const comeBack = () => router.back();
+const comeBack = () => {
+    const currentPath = route.path;
+    
+    // 检查当前是否在主页面（home、about、community）
+    const isMainPage = currentPath === '/' || currentPath === '/home' || 
+                     currentPath === '/home/main' || currentPath === '/community' || 
+                     currentPath === '/about';
+    
+    if (isMainPage) {
+        // 在主页面点击返回按钮时，使用window.history.back()来模拟系统返回行为
+        // 这在Web环境中可能会导航到浏览器历史记录中的上一个页面
+        // 在移动端，这会让系统处理退出应用
+        window.history.back();
+    } else {
+        // 在非主页面使用router.back()进行路由跳转
+        router.back();
+    }
+};
 const goToGithub = () => {
     window.open('https://github.com/this-is-h/NXU-CDIG')
 }
@@ -21,13 +38,45 @@ const checkShowBackButton = () => {
     const currentPath = route.path;
     // 不显示返回按钮的页面：首页、首页主内容、社区、关于
     showBackButton.value = !(currentPath === '/' || currentPath === '/home' ||
-        currentPath === '/home/main' || currentPath === '/community' ||
-        currentPath === '/about');
+                            currentPath === '/home/main' || currentPath === '/community' ||
+                            currentPath === '/about');
 }
+
+// 处理系统返回事件
+const handlePopState = (e) => {
+    const currentPath = route.path;
+    
+    // 检查当前是否在主页面（home、about、community）
+    const isMainPage = currentPath === '/' || currentPath === '/home' || 
+                     currentPath === '/home/main' || currentPath === '/community' || 
+                     currentPath === '/about';
+    
+    // 对于单页应用，在主页面触发系统返回时应该直接退出应用
+    if (isMainPage) {
+        // 阻止默认行为，然后直接退出或不执行任何操作让系统处理退出
+        // 在移动端，这通常会让用户返回到上一个打开的应用
+        return;
+    }
+    
+    // 确保路由状态与我们的应用逻辑同步
+    checkShowBackButton();
+    
+    // 如果从search页面返回，需要清空搜索值
+    // 这里通过事件通知HomeView组件清空搜索值
+    const event = new CustomEvent('clear-search');
+    window.dispatchEvent(event);
+};
 
 // 初始检查
 onMounted(() => {
     checkShowBackButton();
+    // 添加系统返回事件监听
+    window.addEventListener('popstate', handlePopState);
+});
+
+// 移除事件监听
+onUnmounted(() => {
+    window.removeEventListener('popstate', handlePopState);
 });
 
 // 监听路由变化
