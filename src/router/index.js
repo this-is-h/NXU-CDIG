@@ -9,34 +9,39 @@ const router = createRouter({
     routes: [
         {
             path: '/',
-            name: 'home',
+            redirect: '/home/main',
+        },
+        {
+            path: '/home',
             component: HomeView,
-            alias: '/home',
+            redirect: '/home/main',
+            meta: { isRootPage: true },
             children: [
                 {
                     path: 'main',
-                    name: 'main',
+                    name: 'home',
                     component: MainView,
+                    meta: { isRootPage: true },
                 },
                 {
                     path: 'search',
                     name: 'search',
                     component: () => import('../views/Home/SearchView.vue'),
-                }
-            ]
+                    meta: { isRootPage: false },
+                },
+            ],
         },
         {
             path: '/community',
             name: 'community',
             component: CommunityView,
+            meta: { isRootPage: true },
         },
         {
             path: '/about',
             name: 'about',
-            // route level code-splitting
-            // this generates a separate chunk (About.[hash].js) for this route
-            // which is lazy-loaded when the route is visited.
             component: AboutView,
+            meta: { isRootPage: true },
         },
     ],
 })

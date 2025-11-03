@@ -1,49 +1,31 @@
 <script setup>
-import { ref, watch, onMounted, onUnmounted } from 'vue'
-import { useRouter, useRoute } from 'vue-router';
+import { ref, watch } from 'vue'
+import { useRouter, useRoute } from 'vue-router'
 
-const router = useRouter();
-const route = useRoute();
-const searchValue = ref('');
+const router = useRouter()
+const route = useRoute()
+const searchValue = ref('')
 
+// 监听搜索值变化
 watch(searchValue, (newValue) => {
     if (newValue) {
-        router.push(`/home/search`);
+        // 有搜索内容时跳转到搜索页面
+        router.push('/home/search')
     } else {
-        router.push('/home/main');
+        // 清空搜索时使用 replace 返回主页,不产生历史记录
+        router.back()
     }
-});
+})
 
-// 监听路由变化，当从search页面返回时清空搜索值
-let wasInSearchPage = false;
-watch(() => route.path, (newPath, oldPath) => {
-    // 记录之前是否在search页面
-    if (oldPath === '/home/search') {
-        wasInSearchPage = true;
-    }
-    // 当离开search页面返回其他页面时，清空搜索值
-    if (wasInSearchPage && newPath !== '/home/search') {
-        searchValue.value = '';
-        wasInSearchPage = false;
-    }
-});
-
-// 处理系统返回事件（移动端）
-const handleClearSearch = () => {
-    // 当收到清除搜索的事件时，清空搜索值
-    searchValue.value = '';
-};
-
-onMounted(() => {
-    // 添加事件监听
-    window.addEventListener('clear-search', handleClearSearch);
-    router.push('/home/main');
-});
-
-onUnmounted(() => {
-    // 移除事件监听
-    window.removeEventListener('clear-search', handleClearSearch);
-});
+// 监听路由变化，当离开search页面时清空搜索值
+watch(
+    () => route.path,
+    (newPath, oldPath) => {
+        if (oldPath === '/home/search' && newPath !== '/home/search') {
+            searchValue.value = ''
+        }
+    },
+)
 </script>
 
 <template>
