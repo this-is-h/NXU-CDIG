@@ -6,6 +6,8 @@ import { mdiGithub } from '@mdi/js'
 
 const router = useRouter()
 const route = useRoute()
+
+const theme = ref('light')
 const activeView = ref('home')
 
 // 计算是否显示返回按钮 - 监听 route.path 确保响应式更新
@@ -50,7 +52,7 @@ watch(
 </script>
 
 <template>
-    <van-config-provider>
+    <van-config-provider :theme="theme">
         <header>
             <van-nav-bar
                 :left-text="showBackButton ? '返回' : ''"
@@ -71,7 +73,7 @@ watch(
 
         <footer>
             <van-tabbar v-model="activeView">
-                <van-tabbar-item replace to="/home/main" name="home">
+                <van-tabbar-item replace to="/home/main" icon="home-o" name="home">
                     <template #icon="props">
                         <svg
                             v-if="props.active"

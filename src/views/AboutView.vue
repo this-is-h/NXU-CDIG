@@ -1,107 +1,102 @@
-<script setup></script>
+<script setup>
+import { ref } from 'vue'
+import SvgIcon from '@jamescoyle/vue-icon'
+import { mdiThemeLightDark, mdiTranslate } from '@mdi/js'
+
+const activeNames = ref([])
+
+const themeColumns = [
+    { text: '浅色', value: 'light' },
+    { text: '深色', value: 'dark' },
+    { text: '跟随系统', value: 'system' }
+]
+const themeValue = ref('浅色')
+const themePicker = ref(false)
+const themePickerValue = ref([])
+const themeOnConfirm = ({ selectedValues, selectedOptions }) => {
+    themePicker.value = false
+    themePickerValue.value = selectedValues
+    themeValue.value = selectedOptions[0].text
+}
+const languageColumns = [
+    { text: '简体中文', value: 'zh-Hans' },
+    { text: '繁體中文', value: 'zh-Hant' },
+    { text: 'English', value: 'en' }
+]
+const languageValue = ref('浅色')
+const languagePicker = ref(false)
+const languagePickerValue = ref([])
+const languageOnConfirm = ({ selectedValues, selectedOptions }) => {
+    languagePicker.value = false
+    languagePickerValue.value = selectedValues
+    languageValue.value = selectedOptions[0].text
+}
+</script>
 
 <template>
     <div class="about">
-        <svg width="50%" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <g fill="none" class="nc-icon-wrapper">
-                <path
-                    d="M14.5489 8H9.4513L9.08052 19.9253C9.0382 21.0584 9.94529 22 11.0791 22H12.921C14.0549 22 14.962 21.0584 14.9197 19.9254L14.5489 8Z"
-                    fill="url(#hammer_existing_0)"
-                    data-glass="origin"
-                    mask="url(#hammer_mask)"
-                />
-                <path
-                    d="M14.5489 8H9.4513L9.08052 19.9253C9.0382 21.0584 9.94529 22 11.0791 22H12.921C14.0549 22 14.962 21.0584 14.9197 19.9254L14.5489 8Z"
-                    fill="url(#hammer_existing_0)"
-                    data-glass="clone"
-                    filter="url(#hammer_filter)"
-                    clip-path="url(#hammer_clipPath)"
-                />
-                <path
-                    d="M3 9V5C3 3.34315 4.34315 2 6 2H14.7393C15.4739 2 16.1833 2.26975 16.7324 2.75781L19.9932 5.65625C20.6335 6.22554 21 7.04162 21 7.89844V9.5C21 10.8807 19.8807 12 18.5 12H6C4.34315 12 3 10.6569 3 9Z"
-                    fill="url(#hammer_existing_1)"
-                    data-glass="blur"
-                />
-                <path
-                    d="M3 9V5C3 3.34315 4.34315 2 6 2H14.7393C15.4739 2 16.1833 2.26975 16.7324 2.75781L19.9932 5.65625C20.6335 6.22554 21 7.04162 21 7.89844V9.5C21 10.8807 19.8807 12 18.5 12V11.25C19.4665 11.25 20.25 10.4665 20.25 9.5V7.89844C20.25 7.33628 20.0393 6.79772 19.665 6.38574L19.4951 6.2168L16.2344 3.31836C15.8225 2.95228 15.2902 2.75 14.7393 2.75H6C4.75736 2.75 3.75 3.75736 3.75 5V9C3.75 10.2426 4.75736 11.25 6 11.25V12C4.34315 12 3 10.6569 3 9ZM18.5 11.25V12H6V11.25H18.5Z"
-                    fill="url(#hammer_existing_2)"
-                />
-                <defs>
-                    <linearGradient
-                        id="hammer_existing_0"
-                        x1="12"
-                        y1="8"
-                        x2="12"
-                        y2="22"
-                        gradientUnits="userSpaceOnUse"
+        <van-collapse v-model="activeNames">
+            <van-collapse-item class="collapse-settings" title="设置" name="1">
+                <van-cell-group inset>
+                    <van-field
+                        v-model="themeValue"
+                        is-link
+                        readonly
+                        @click="themePicker = true"
                     >
-                        <stop stop-color="rgba(87, 87, 87, 1)" data-glass-11="on" />
-                        <stop offset="1" stop-color="rgba(21, 21, 21, 1)" data-glass-12="on" />
-                    </linearGradient>
-                    <linearGradient
-                        id="hammer_existing_1"
-                        x1="12"
-                        y1="2"
-                        x2="12"
-                        y2="12"
-                        gradientUnits="userSpaceOnUse"
+                        <template #label>
+                            <div style="display: flex; align-items: center; font-weight: bold;">
+                                <svg-icon
+                                    type="mdi"
+                                    :path="mdiThemeLightDark"
+                                    style="margin-right: 0.3em"
+                                ></svg-icon>
+                                主题
+                            </div>
+                        </template>
+                    </van-field>
+                    <van-field
+                        v-model="languageValue"
+                        is-link
+                        readonly
+                        @click="languagePicker = true"
                     >
-                        <stop stop-color="rgba(227, 227, 229, 0.6)" data-glass-21="on" />
-                        <stop offset="1" stop-color="rgba(187, 187, 192, 0.6)" data-glass-22="on" />
-                    </linearGradient>
-                    <linearGradient
-                        id="hammer_existing_2"
-                        x1="12"
-                        y1="2"
-                        x2="12"
-                        y2="7.791"
-                        gradientUnits="userSpaceOnUse"
-                    >
-                        <stop stop-color="rgba(255, 255, 255, 1)" data-glass-light="on" />
-                        <stop
-                            offset="1"
-                            stop-color="rgba(255, 255, 255, 1)"
-                            stop-opacity="0"
-                            data-glass-light="on"
-                        />
-                    </linearGradient>
-                    <filter
-                        id="hammer_filter"
-                        x="-100%"
-                        y="-100%"
-                        width="400%"
-                        height="400%"
-                        filterUnits="objectBoundingBox"
-                        primitiveUnits="userSpaceOnUse"
-                    >
-                        <feGaussianBlur
-                            stdDeviation="2"
-                            x="0%"
-                            y="0%"
-                            width="100%"
-                            height="100%"
-                            in="SourceGraphic"
-                            edgeMode="none"
-                            result="blur"
-                        />
-                    </filter>
-                    <clipPath id="hammer_clipPath">
-                        <path
-                            d="M3 9V5C3 3.34315 4.34315 2 6 2H14.7393C15.4739 2 16.1833 2.26975 16.7324 2.75781L19.9932 5.65625C20.6335 6.22554 21 7.04162 21 7.89844V9.5C21 10.8807 19.8807 12 18.5 12H6C4.34315 12 3 10.6569 3 9Z"
-                            fill="url(#hammer_existing_1)"
-                        />
-                    </clipPath>
-                    <mask id="hammer_mask">
-                        <rect width="100%" height="100%" fill="#FFF" />
-                        <path
-                            d="M3 9V5C3 3.34315 4.34315 2 6 2H14.7393C15.4739 2 16.1833 2.26975 16.7324 2.75781L19.9932 5.65625C20.6335 6.22554 21 7.04162 21 7.89844V9.5C21 10.8807 19.8807 12 18.5 12H6C4.34315 12 3 10.6569 3 9Z"
-                            fill="#000"
-                        />
-                    </mask>
-                </defs>
-            </g>
-        </svg>
-        <h3>建设中...</h3>
+                        <template #label>
+                            <div style="display: flex; align-items: center; font-weight: bold;">
+                                <svg-icon
+                                    type="mdi"
+                                    :path="mdiTranslate"
+                                    style="margin-right: 0.3em"
+                                ></svg-icon>
+                                语言
+                            </div>
+                        </template>
+                    </van-field>
+                </van-cell-group>
+                <van-popup v-model:show="themePicker" destroy-on-close round position="bottom">
+                    <van-picker
+                        :model-value="themePickerValue"
+                        :columns="themeColumns"
+                        @cancel="themePicker = false"
+                        @confirm="themeOnConfirm"
+                    />
+                </van-popup>
+                <van-popup v-model:show="languagePicker" destroy-on-close round position="bottom">
+                    <van-picker
+                        :model-value="languagePickerValue"
+                        :columns="languageColumns"
+                        @cancel="languagePicker = false"
+                        @confirm="languageOnConfirm"
+                    />
+                </van-popup>
+            </van-collapse-item>
+            <van-collapse-item title="标题2" name="2">
+                技术无非就是那些开发它的人的共同灵魂。
+            </van-collapse-item>
+            <van-collapse-item title="标题3" name="3">
+                在代码阅读过程中人们说脏话的频率是衡量代码质量的唯一标准。
+            </van-collapse-item>
+        </van-collapse>
     </div>
 </template>
 
@@ -109,9 +104,9 @@
 .about {
     width: 100%;
     height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+}
+
+:deep(.collapse-settings .van-collapse-item__content) {
+    padding: 0;
 }
 </style>
