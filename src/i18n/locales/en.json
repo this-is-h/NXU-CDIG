@@ -1,0 +1,31 @@
+{
+    "app": {
+        "title": "NXU Cat & Dog Illustrated Guide",
+        "back": "Back"
+    },
+    "nav": {
+        "home": "Home",
+        "community": "Community",
+        "about": "About"
+    },
+    "settings": {
+        "title": "Settings",
+        "theme": "Theme",
+        "language": "Language"
+    },
+    "theme": {
+        "light": "Light",
+        "dark": "Dark",
+        "system": "System"
+    },
+    "language": {
+        "zhHans": "简体中文",
+        "zhHant": "繁體中文",
+        "en": "English"
+    },
+    "about": {
+        "aboutUs": "About Us",
+        "faq": "FAQ",
+        "thanks": "Thanks"
+    }
+}

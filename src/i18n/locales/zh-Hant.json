@@ -1,0 +1,31 @@
+{
+    "app": {
+        "title": "寧夏大學貓狗圖鑑",
+        "back": "返回"
+    },
+    "nav": {
+        "home": "首頁",
+        "community": "社區",
+        "about": "關於"
+    },
+    "settings": {
+        "title": "設置",
+        "theme": "主題",
+        "language": "語言"
+    },
+    "theme": {
+        "light": "淺色",
+        "dark": "深色",
+        "system": "跟隨系統"
+    },
+    "language": {
+        "zhHans": "简体中文",
+        "zhHant": "繁體中文",
+        "en": "English"
+    },
+    "about": {
+        "aboutUs": "關於我們",
+        "faq": "常見問題",
+        "thanks": "致謝名單"
+    }
+}

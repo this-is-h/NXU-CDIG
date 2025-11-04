@@ -293,42 +293,4 @@ watch(accordionMode, () => {
 .item-name {
     margin-right: 5px;
 }
-
-/* 美化滚动条 */
-.main-content::-webkit-scrollbar {
-    width: 4px;
-}
-
-.main-content::-webkit-scrollbar-corner {
-    background-color: transparent;
-}
-
-.main-content::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    border-radius: 100px;
-}
-
-.main-content::-webkit-scrollbar-thumb {
-    background: #c1c1c1;
-    border-radius: 100px;
-}
-
-/* Firefox 滚动条样式 */
-.main-content {
-    scrollbar-width: thin;
-    scrollbar-color: #c1c1c1 #f1f1f1;
-}
-
-/* 适配 Vant 暗黑模式 */
-.van-theme-dark .main-content::-webkit-scrollbar-track {
-    background: #1f1f1f;
-}
-
-.van-theme-dark .main-content::-webkit-scrollbar-thumb {
-    background: #555;
-}
-
-.van-theme-dark .main-content {
-    scrollbar-color: #555 #1f1f1f;
-}
 </style>

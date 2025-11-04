@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import MainView from '../views/Home/MainView.vue'
+import SearchView from '../views/Home/SearchView.vue'
 import CommunityView from '../views/CommunityView.vue'
 import AboutView from '../views/AboutView.vue'
 
@@ -26,7 +27,7 @@ const router = createRouter({
                 {
                     path: 'search',
                     name: 'search',
-                    component: () => import('../views/Home/SearchView.vue'),
+                    component: SearchView,
                     meta: { isRootPage: false },
                 },
             ],

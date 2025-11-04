@@ -1,0 +1,31 @@
+{
+    "app": {
+        "title": "宁夏大学猫狗图鉴",
+        "back": "返回"
+    },
+    "nav": {
+        "home": "首页",
+        "community": "社区",
+        "about": "关于"
+    },
+    "settings": {
+        "title": "设置",
+        "theme": "主题",
+        "language": "语言"
+    },
+    "theme": {
+        "light": "浅色",
+        "dark": "深色",
+        "system": "跟随系统"
+    },
+    "language": {
+        "zhHans": "简体中文",
+        "zhHant": "繁體中文",
+        "en": "English"
+    },
+    "about": {
+        "aboutUs": "关于我们",
+        "faq": "常见问题",
+        "thanks": "致谢名单"
+    }
+}
