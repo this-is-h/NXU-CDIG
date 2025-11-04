@@ -4,6 +4,10 @@ import MainView from '../views/Home/MainView.vue'
 import SearchView from '../views/Home/SearchView.vue'
 import CommunityView from '../views/CommunityView.vue'
 import AboutView from '../views/AboutView.vue'
+import AboutUsView from '../views/About/AboutUsView.vue'
+import QAView from '../views/About/QAView.vue'
+import ThanksView from '../views/About/ThanksView.vue'
+
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -20,7 +24,7 @@ const router = createRouter({
             children: [
                 {
                     path: 'main',
-                    name: 'home',
+                    name: 'main',
                     component: MainView,
                     meta: { isRootPage: true },
                 },
@@ -43,6 +47,24 @@ const router = createRouter({
             name: 'about',
             component: AboutView,
             meta: { isRootPage: true },
+        },
+        {
+            path: '/aboutUs',
+            name: 'aboutUs',
+            component: AboutUsView,
+            meta: { isRootPage: false },
+        },
+        {
+            path: '/qa',
+            name: 'qa',
+            component: QAView,
+            meta: { isRootPage: false },
+        },
+        {
+            path: '/thanks',
+            name: 'thanks',
+            component: ThanksView,
+            meta: { isRootPage: false },
         },
     ],
 })

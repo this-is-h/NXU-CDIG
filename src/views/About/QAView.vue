@@ -109,6 +109,3 @@
         </template>
     </van-empty>
 </template>
-
-<style scoped>
-</style>

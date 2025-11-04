@@ -170,9 +170,9 @@ const languageOnConfirm = ({ selectedOptions }) => {
             </van-collapse>
         </van-cell-group>
         <van-cell-group inset style="margin-top: 0.5em">
-            <van-cell :title="$t('about.aboutUs')" is-link to="/about/about" />
-            <van-cell :title="$t('about.faq')" is-link to="/about/qa" />
-            <van-cell :title="$t('about.thanks')" is-link to="/about/thanks" />
+            <van-cell :title="$t('about.aboutUs')" is-link to="/aboutUs" />
+            <van-cell :title="$t('about.faq')" is-link to="/qa" />
+            <van-cell :title="$t('about.thanks')" is-link to="/thanks" />
         </van-cell-group>
     </div>
 </template>
