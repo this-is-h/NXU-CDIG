@@ -27,5 +27,15 @@
         "aboutUs": "关于我们",
         "faq": "常见问题",
         "thanks": "致谢名单"
+    },
+    "pets": {
+        "cat": "猫",
+        "dog": "狗",
+        "accordionModeLabel": "仅展开单项",
+        "no": "否",
+        "yes": "是",
+        "openAll": "全部展开",
+        "closeAll": "全部收起",
+        "description": "代码是写出来给人看的，附带能在机器上运行。"
     }
 }

@@ -1,63 +1,17 @@
 <script setup>
 import { ref, computed, watch } from 'vue'
+import { useI18n } from 'vue-i18n'
 import SvgIcon from '@jamescoyle/vue-icon'
 import { mdiCat, mdiDog } from '@mdi/js'
+import { getPetsData } from '@/data/pets'
+
+const { locale } = useI18n()
 
 // 常量定义
 const CAT_IMAGE_URL = 'https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg'
 
-const STATUS_CONFIG = {
-    在校: { type: 'success' },
-    毕业: { type: 'primary' },
-    失踪: { type: 'warning' },
-    喵星: { color: 'grey' },
-}
-
-const CAT_TYPE_LIST = [
-    '纯色',
-    '其他',
-    '其他',
-    '其他',
-    '其他',
-    '其他',
-    '其他',
-    '其他',
-    '其他',
-    '其他',
-    '其他',
-    '其他',
-]
-
-const DOG_TYPE_LIST = ['1', '2']
-
-const CAT_DATA = {
-    纯色: [
-        { name: '1', sex: '公', status: '在校' },
-        { name: '2', sex: '公', status: '毕业' },
-        { name: '3', sex: '公', status: '失踪' },
-        { name: '4', sex: '公', status: '喵星' },
-        { name: '1', sex: '公', status: '在校' },
-        { name: '2', sex: '公', status: '毕业' },
-        { name: '3', sex: '公', status: '失踪' },
-        { name: '4', sex: '公', status: '喵星' },
-        { name: '1', sex: '公', status: '在校' },
-        { name: '2', sex: '公', status: '毕业' },
-        { name: '3', sex: '公', status: '失踪' },
-        { name: '4', sex: '公', status: '喵星' },
-    ],
-    其他: [{ name: '其他', sex: '公', status: '在校' }],
-}
-
-const DOG_DATA = {
-    1: [
-        { name: '狗1', sex: '公', status: '在校' },
-        { name: '狗2', sex: '公', status: '毕业' },
-    ],
-    2: [
-        { name: '狗3', sex: '公', status: '在校' },
-        { name: '狗4', sex: '公', status: '失踪' },
-    ],
-}
+// 响应式数据引用
+const petsData = ref(getPetsData(locale.value))
 
 // 响应式状态
 const accordionMode = ref(false)
@@ -71,9 +25,15 @@ const activeDogType = ref(0)
 const activeCat = ref([])
 const activeDog = ref([])
 
-// 计算属性
-const currentCatData = computed(() => CAT_DATA[CAT_TYPE_LIST[activeCatType.value]])
-const currentDogData = computed(() => DOG_DATA[DOG_TYPE_LIST[activeDogType.value]])
+// 计算属性 - 从 petsData 中获取数据
+const STATUS_CONFIG = computed(() => petsData.value.STATUS_CONFIG)
+const CAT_TYPE_LIST = computed(() => petsData.value.CAT_TYPE_LIST)
+const DOG_TYPE_LIST = computed(() => petsData.value.DOG_TYPE_LIST)
+const CAT_DATA = computed(() => petsData.value.CAT_DATA)
+const DOG_DATA = computed(() => petsData.value.DOG_DATA)
+
+const currentCatData = computed(() => CAT_DATA.value[CAT_TYPE_LIST.value[activeCatType.value]])
+const currentDogData = computed(() => DOG_DATA.value[DOG_TYPE_LIST.value[activeDogType.value]])
 
 // 方法
 const toggleAllCatTabs = () => {
@@ -93,6 +53,16 @@ watch(accordionMode, () => {
     catTabsAllOpen.value = false
     dogTabsAllOpen.value = false
 })
+
+// 监听语言变化，重新加载数据
+watch(locale, (newLocale) => {
+    petsData.value = getPetsData(newLocale)
+    // 重置状态
+    activeCatType.value = 0
+    activeDogType.value = 0
+    activeCat.value = accordionMode.value ? '' : []
+    activeDog.value = accordionMode.value ? '' : []
+})
 </script>
 
 <template>
@@ -101,14 +71,14 @@ watch(accordionMode, () => {
             <template #title>
                 <div class="tab-title">
                     <svg-icon type="mdi" :path="mdiCat" class="tab-icon" />
-                    猫
+                    {{ $t('pets.cat') }}
                 </div>
             </template>
             <div class="tab-content">
                 <div class="control-bar">
-                    <span>仅展开单项：否</span>
+                    <span>{{ $t('pets.accordionModeLabel') }}：{{ $t('pets.no') }}</span>
                     <van-switch v-model="accordionMode" size="18px" class="switch-control" />
-                    <span>是</span>
+                    <span>{{ $t('pets.yes') }}</span>
                     <van-button
                         v-if="!accordionMode"
                         plain
@@ -117,7 +87,7 @@ watch(accordionMode, () => {
                         @click="toggleAllCatTabs"
                         class="toggle-button"
                     >
-                        {{ catTabsAllOpen ? '全部收起' : '全部展开' }}
+                        {{ catTabsAllOpen ? $t('pets.closeAll') : $t('pets.openAll') }}
                     </van-button>
                 </div>
                 <div class="content-wrapper">
@@ -158,7 +128,7 @@ watch(accordionMode, () => {
                                         </van-tag>
                                     </div>
                                 </template>
-                                代码是写出来给人看的，附带能在机器上运行。
+                                {{ $t('pets.description') }}
                             </van-collapse-item>
                         </van-collapse>
                     </div>
@@ -169,14 +139,14 @@ watch(accordionMode, () => {
             <template #title>
                 <div class="tab-title">
                     <svg-icon type="mdi" :path="mdiDog" class="tab-icon" />
-                    狗
+                    {{ $t('pets.dog') }}
                 </div>
             </template>
             <div class="tab-content">
                 <div class="control-bar">
-                    <span>仅展开单项：否</span>
+                    <span>{{ $t('pets.accordionModeLabel') }}：{{ $t('pets.no') }}</span>
                     <van-switch v-model="accordionMode" size="18px" class="switch-control" />
-                    <span>是</span>
+                    <span>{{ $t('pets.yes') }}</span>
                     <van-button
                         v-if="!accordionMode"
                         plain
@@ -185,7 +155,7 @@ watch(accordionMode, () => {
                         @click="toggleAllDogTabs"
                         class="toggle-button"
                     >
-                        {{ dogTabsAllOpen ? '全部收起' : '全部展开' }}
+                        {{ catTabsAllOpen ? $t('pets.closeAll') : $t('pets.openAll') }}
                     </van-button>
                 </div>
                 <div class="content-wrapper">
@@ -215,7 +185,7 @@ watch(accordionMode, () => {
                                         </van-tag>
                                     </div>
                                 </template>
-                                代码是写出来给人看的，附带能在机器上运行。
+                                {{ $t('pets.description') }}
                             </van-collapse-item>
                         </van-collapse>
                     </div>

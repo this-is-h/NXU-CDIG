@@ -27,5 +27,15 @@
         "aboutUs": "關於我們",
         "faq": "常見問題",
         "thanks": "致謝名單"
+    },
+    "pets": {
+        "cat": "貓",
+        "dog": "狗",
+        "accordionModeLabel": "僅展開單項",
+        "no": "否",
+        "yes": "是",
+        "openAll": "全部展開",
+        "closeAll": "全部收起",
+        "description": "代碼是寫出來給人看的，附帶能在機器上運行。"
     }
 }

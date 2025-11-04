@@ -1,6 +1,6 @@
 {
     "app": {
-        "title": "NXU Cat & Dog Illustrated Guide",
+        "title": "NXU Cat & Dog Guide",
         "back": "Back"
     },
     "nav": {
@@ -27,5 +27,15 @@
         "aboutUs": "About Us",
         "faq": "FAQ",
         "thanks": "Thanks"
+    },
+    "pets": {
+        "cat": "Cat",
+        "dog": "Dog",
+        "accordionModeLabel": "Accordion Mode",
+        "no": "No",
+        "yes": "Yes",
+        "openAll": "Open All",
+        "closeAll": "Close All",
+        "description": "Code is written for humans to read, and only incidentally for machines to execute."
     }
 }
