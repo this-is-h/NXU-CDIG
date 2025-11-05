@@ -1,7 +1,10 @@
 <script setup>
-import { ref } from 'vue';
+import { ref } from 'vue'
+import bdmxImg from '@/assets/img/bdmx.jpg'
+import hImg from '@/assets/img/h.png'
+import gzhLargeImg from '@/assets/img/gzh-large.png'
 
-const dialogH = ref(false);
+const dialogH = ref(false)
 </script>
 
 <template>
@@ -9,13 +12,19 @@ const dialogH = ref(false);
         <h1>致谢名单</h1>
         <h2>特别鸣谢</h2>
         <van-cell-group inset>
-            <van-cell title="北大猫协" label="燕园猫速查（北大猫咪图鉴）" url="https://gitee.com/circlelq/yan-yuan-mao-su-cha-shou-ce" center is-link>
+            <van-cell
+                title="北大猫协"
+                label="燕园猫速查（北大猫咪图鉴）"
+                url="https://gitee.com/circlelq/yan-yuan-mao-su-cha-shou-ce"
+                center
+                is-link
+            >
                 <template #icon>
                     <van-image
                         round
                         width="24"
                         style="margin-right: 10px; width: 24px"
-                        src="/src/assets/img/bdmx.jpg"
+                        :src="bdmxImg"
                     />
                 </template>
             </van-cell>
@@ -26,14 +35,12 @@ const dialogH = ref(false);
                         round
                         width="24"
                         style="margin-right: 10px; width: 24px"
-                        src="/src/assets/img/h.png"
+                        :src="hImg"
                     />
                 </template>
             </van-cell>
             <van-dialog v-model:show="dialogH" title="关注我们">
-                <van-image style="padding: 1em 0.5em;"
-                    src="/src/assets/img/gzh-large.png"
-                />
+                <van-image style="padding: 1em 0.5em" :src="gzhLargeImg" />
             </van-dialog>
         </van-cell-group>
         <h2>项目支持</h2>

@@ -3,6 +3,7 @@ import { ref, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import SvgIcon from '@jamescoyle/vue-icon'
 import { mdiThemeLightDark, mdiTranslate } from '@mdi/js'
+import hImg from '@/assets/img/h.png'
 
 const { t } = useI18n()
 const activeNames = ref('')
@@ -97,7 +98,7 @@ const languageOnConfirm = ({ selectedOptions }) => {
                 padding: 1em;
             "
         >
-            <van-image round width="30%" src="/src/assets/img/h.png" />
+            <van-image round width="30%" :src="hImg" />
             NXU - CDIG
         </div>
         <van-cell-group inset>

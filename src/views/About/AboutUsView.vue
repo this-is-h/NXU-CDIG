@@ -1,4 +1,6 @@
-<script setup></script>
+<script setup>
+import qqgroupImg from '@/assets/img/qqgroup.png'
+</script>
 
 <template>
     <div class="about">
@@ -7,9 +9,16 @@
             <van-cell title="这是一个什么项目？" center>
                 <template #label>
                     <p>
-                        <strong><em>NXU CDIG（NXU Cat & Dog Illustrated Guide）</em></strong><br><br>
-                        <strong><em>宁夏大学猫狗图鉴</em></strong> 由 <strong>H</strong> 开发，用于展示宁夏大学校园内流浪（不全是）猫狗的基本情况。<br><br>
-                        本项目已在 <strong><code>Github</code></strong> 以 <a href="https://mit-license.org/" style="color: var(--van-primary-color);">MIT</a> 协议开源，欢迎大家提交 PR 与 Issue。<br>
+                        <strong><em>NXU CDIG（NXU Cat & Dog Illustrated Guide）</em></strong
+                        ><br /><br />
+                        <strong><em>宁夏大学猫狗图鉴</em></strong> 由
+                        <strong>H</strong>
+                        开发，用于展示宁夏大学校园内流浪（不全是）猫狗的基本情况。<br /><br />
+                        本项目已在 <strong><code>Github</code></strong> 以
+                        <a href="https://mit-license.org/" style="color: var(--van-primary-color)"
+                            >MIT</a
+                        >
+                        协议开源，欢迎大家提交 PR 与 Issue。<br />
                     </p>
                 </template>
             </van-cell>
@@ -35,12 +44,10 @@
                                 </li>
                             </ul>
                         </li>
-                        <li>
-                            猫常见的较合适的食物有猫粮、猫罐头、以及其它一些猫咪零食。
-                        </li>
+                        <li>猫常见的较合适的食物有猫粮、猫罐头、以及其它一些猫咪零食。</li>
                     </ol>
-                    <br>
-                    <div style="text-align: right;">
+                    <br />
+                    <div style="text-align: right">
                         <span>科普内容参考：北大猫协</span>
                     </div>
                 </template>
@@ -50,7 +57,7 @@
             <van-cell title="项目交流群" center>
                 <template #label>
                     <div style="width: 100%; display: flex; justify-content: center">
-                        <van-image src="/src/assets/img/qqgroup.png" width="60%">
+                        <van-image :src="qqgroupImg" width="60%">
                             <template #loading>
                                 <van-loading type="spinner" size="20"></van-loading>
                             </template>
@@ -63,9 +70,7 @@
             <van-cell title="项目声明" center>
                 <template #label>
                     <ol style="padding-left: 1em; list-style: auto">
-                        <li>
-                            数据来源于用户上传，本项目不对数据准确性和完整性负责。
-                        </li>
+                        <li>数据来源于用户上传，本项目不对数据准确性和完整性负责。</li>
                         <li>
                             涉及的 <code>Cookies</code> 及
                             <code>localStorage</code
