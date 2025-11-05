@@ -14,7 +14,7 @@ import qqgroupImg from '@/assets/img/qqgroup.png'
                         <strong><em>宁夏大学猫狗图鉴</em></strong> 由
                         <strong>H</strong>
                         开发，用于展示宁夏大学校园内流浪（不全是）猫狗的基本情况。<br /><br />
-                        本项目已在 <strong><code>Github</code></strong> 以
+                        本项目已在 <strong>Github</strong> 以
                         <a href="https://mit-license.org/" style="color: var(--van-primary-color)"
                             >MIT</a
                         >
@@ -34,13 +34,18 @@ import qqgroupImg from '@/assets/img/qqgroup.png'
                             若您在校内偶遇流浪猫，<strong>切记</strong>人类的食物<strong>不要</strong>喂给流浪猫！
                             <ul style="padding-left: 1em; list-style: circle">
                                 <li>
-                                    🚫<strong>巧克力、葡萄制品、大葱、洋葱</strong>等食品对猫<strong>有毒</strong>，可能会引起急性肾衰竭，切<strong>不可以</strong>喂食！
+                                    🚫
+                                    <strong>巧克力、葡萄制品、大葱、洋葱</strong
+                                    >等食品对猫<strong>有毒</strong>，可能会引起急性肾衰竭，切<strong>不可以</strong>喂食！
                                 </li>
                                 <li>
-                                    🚫<strong>火腿肠</strong>和<strong>牛奶</strong>也并<strong>不适合</strong>猫咪，会引起肠胃反应，造成腹泻等状况。
+                                    🚫
+                                    <strong>火腿肠</strong
+                                    >和<strong>牛奶</strong>也并<strong>不适合</strong>猫咪，会引起肠胃反应，造成腹泻等状况。
                                 </li>
                                 <li>
-                                    🚫酸性的各类水果、香辛料制的肉类、乌贼等海产也<strong>均不适合</strong>猫咪食用。
+                                    🚫
+                                    酸性的各类水果、香辛料制的肉类、乌贼等海产也<strong>均不适合</strong>猫咪食用。
                                 </li>
                             </ul>
                         </li>
