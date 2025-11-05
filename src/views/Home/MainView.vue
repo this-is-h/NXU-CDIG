@@ -1,8 +1,9 @@
 <script setup>
-import { ref, computed, watch } from 'vue'
+import { ref, computed, watch, onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
 import SvgIcon from '@jamescoyle/vue-icon'
 import { mdiCat, mdiDog } from '@mdi/js'
+import { showToast } from 'vant'
 import { getPetsData } from '@/data/animals'
 import AnimalContent from '@/components/AnimalContent.vue'
 
@@ -63,6 +64,10 @@ watch(locale, (newLocale) => {
     activeDogType.value = 0
     activeCat.value = accordionMode.value ? '' : []
     activeDog.value = accordionMode.value ? '' : []
+})
+
+onMounted(() => {
+    showToast('目前暂为示例数据')
 })
 </script>
 

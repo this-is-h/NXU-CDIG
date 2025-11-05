@@ -3,6 +3,8 @@ import { ref } from 'vue'
 import bdmxImg from '@/assets/img/bdmx.jpg'
 import hImg from '@/assets/img/h.png'
 import gzhLargeImg from '@/assets/img/gzh-large.png'
+import hxmmImg from '@/assets/img/hxmm.png'
+import hxmdImg from '@/assets/img/hxmd.jpg'
 
 const dialogH = ref(false)
 </script>
@@ -36,6 +38,26 @@ const dialogH = ref(false)
                         width="24"
                         style="margin-right: 10px; width: 24px"
                         :src="hImg"
+                    />
+                </template>
+            </van-cell>
+            <van-cell title="H的小迷妹（？" label="看到有这么温暖的小程序出现 我决定给这世界很多好脸色" center>
+                <template #icon>
+                    <van-image
+                        round
+                        width="24"
+                        style="margin-right: 10px; width: 24px"
+                        :src="hxmmImg"
+                    />
+                </template>
+            </van-cell>
+            <van-cell title="H的小迷弟（？" label="我真的爱你 没人能比拟" center>
+                <template #icon>
+                    <van-image
+                        round
+                        width="24"
+                        style="margin-right: 10px; width: 24px"
+                        :src="hxmdImg"
                     />
                 </template>
             </van-cell>
