@@ -6,45 +6,377 @@
         "喵星": { "color": "grey" }
     },
     "CAT_TYPE_LIST": [
-        "纯色",
-        "其他",
-        "其他",
-        "其他",
-        "其他",
-        "其他",
-        "其他",
-        "其他",
-        "其他",
-        "其他",
-        "其他",
-        "其他"
+        "橘猫",
+        "狸花猫",
+        "三花猫",
+        "奶牛猫",
+        "纯色猫",
+        "虎斑猫",
+        "暹罗猫",
+        "美短猫",
+        "其他品种"
     ],
-    "DOG_TYPE_LIST": ["1", "2"],
+    "DOG_TYPE_LIST": [
+        "中华田园犬",
+        "金毛犬",
+        "拉布拉多",
+        "哈士奇",
+        "柯基犬",
+        "泰迪犬",
+        "边牧犬",
+        "其他品种"
+    ],
     "CAT_DATA": {
-        "纯色": [
-            { "name": "1", "sex": "公", "status": "在校" },
-            { "name": "2", "sex": "公", "status": "毕业" },
-            { "name": "3", "sex": "公", "status": "失踪" },
-            { "name": "4", "sex": "公", "status": "喵星" },
-            { "name": "1", "sex": "公", "status": "在校" },
-            { "name": "2", "sex": "公", "status": "毕业" },
-            { "name": "3", "sex": "公", "status": "失踪" },
-            { "name": "4", "sex": "公", "status": "喵星" },
-            { "name": "1", "sex": "公", "status": "在校" },
-            { "name": "2", "sex": "公", "status": "毕业" },
-            { "name": "3", "sex": "公", "status": "失踪" },
-            { "name": "4", "sex": "公", "status": "喵星" }
+        "橘猫": [
+            {
+                "name": "小橘",
+                "sex": "公",
+                "status": "在校",
+                "color": "橘黄色",
+                "personality": "活泼好动，爱吃零食，见到人就会跑过来撒娇",
+                "appearance": "全身橘黄色，体型偏胖，眼睛圆溜溜的",
+                "location": "文萃校区图书馆附近"
+            },
+            {
+                "name": "大橘",
+                "sex": "公",
+                "status": "在校",
+                "color": "深橘色",
+                "personality": "性格温和，喜欢晒太阳，不怕人",
+                "appearance": "体型较大，橘色条纹明显，四肢粗壮",
+                "location": "文萃校区食堂东侧"
+            },
+            {
+                "name": "橘子汽水",
+                "sex": "母",
+                "status": "在校",
+                "color": "浅橘色",
+                "personality": "胆小怕生，但对熟悉的人很亲近",
+                "appearance": "体型娇小，毛色较浅，尾巴蓬松",
+                "location": "文萃校区宿舍楼区域"
+            }
         ],
-        "其他": [{ "name": "其他", "sex": "公", "status": "在校" }]
+        "狸花猫": [
+            {
+                "name": "花花",
+                "sex": "母",
+                "status": "在校",
+                "color": "棕色条纹",
+                "personality": "独立性强，警觉性高，是校园里的捕鼠高手",
+                "appearance": "标准的狸花纹路，身形矫健，眼神犀利",
+                "location": "怀远校区实验楼周边"
+            },
+            {
+                "name": "小虎",
+                "sex": "公",
+                "status": "在校",
+                "color": "黑棕条纹",
+                "personality": "勇敢好奇，喜欢探索新地方",
+                "appearance": "体格健壮，虎斑纹路清晰，尾巴有黑色环纹",
+                "location": "怀远校区教学楼A区"
+            },
+            {
+                "name": "阿花",
+                "sex": "母",
+                "status": "毕业",
+                "color": "灰棕条纹",
+                "personality": "温柔体贴，曾经是很多学生的心头好",
+                "appearance": "毛色优美，眼睛呈琥珀色",
+                "location": "文萃校区（已离校）"
+            }
+        ],
+        "三花猫": [
+            {
+                "name": "三三",
+                "sex": "母",
+                "status": "在校",
+                "color": "黑橘白三色",
+                "personality": "高冷傲娇，只对特定的人示好",
+                "appearance": "三色分布均匀，额头有橘色斑纹",
+                "location": "文萃校区操场附近"
+            },
+            {
+                "name": "小福",
+                "sex": "母",
+                "status": "在校",
+                "color": "黑橘白三色",
+                "personality": "温顺友好，是校园里的人气王",
+                "appearance": "毛色鲜艳，左眼周围有橘色斑块",
+                "location": "怀远校区行政楼"
+            }
+        ],
+        "奶牛猫": [
+            {
+                "name": "奶茶",
+                "sex": "公",
+                "status": "在校",
+                "color": "黑白色",
+                "personality": "调皮捣蛋，经常做出搞怪动作",
+                "appearance": "黑白分明，像奶牛一样的花色，四肢为白色",
+                "location": "文萃校区篮球场"
+            },
+            {
+                "name": "小黑白",
+                "sex": "母",
+                "status": "在校",
+                "color": "黑白色",
+                "personality": "活泼可爱，喜欢追逐飞虫",
+                "appearance": "背部为黑色，腹部为白色，四只爪子是白色",
+                "location": "怀远校区体育馆"
+            },
+            {
+                "name": "牛牛",
+                "sex": "公",
+                "status": "失踪",
+                "color": "黑白色",
+                "personality": "曾经很亲人，喜欢在人群中穿梭",
+                "appearance": "头部黑色，身体有大片白色区域",
+                "location": "文萃校区（已失踪）"
+            }
+        ],
+        "纯色猫": [
+            {
+                "name": "小白",
+                "sex": "母",
+                "status": "在校",
+                "color": "纯白色",
+                "personality": "优雅安静，像个小公主",
+                "appearance": "全身雪白无杂毛，眼睛是蓝绿异瞳",
+                "location": "文萃校区图书馆"
+            },
+            {
+                "name": "小黑",
+                "sex": "公",
+                "status": "在校",
+                "color": "纯黑色",
+                "personality": "神秘低调，经常在夜晚出没",
+                "appearance": "通体纯黑，眼睛是金黄色，身形修长",
+                "location": "怀远校区宿舍区"
+            },
+            {
+                "name": "灰灰",
+                "sex": "母",
+                "status": "在校",
+                "color": "纯灰色",
+                "personality": "文静温柔，喜欢安静的环境",
+                "appearance": "银灰色短毛，眼睛是绿色",
+                "location": "文萃校区艺术楼"
+            }
+        ],
+        "虎斑猫": [
+            {
+                "name": "虎子",
+                "sex": "公",
+                "status": "在校",
+                "color": "银色虎斑",
+                "personality": "勇猛威武，是校园猫群的领袖之一",
+                "appearance": "银灰底色配黑色虎斑纹，体格强壮",
+                "location": "怀远校区工学院"
+            },
+            {
+                "name": "斑斑",
+                "sex": "母",
+                "status": "在校",
+                "color": "棕色虎斑",
+                "personality": "温和友善，喜欢和其他猫咪玩耍",
+                "appearance": "棕色底配深色条纹，额头有M型纹路",
+                "location": "文萃校区理学院"
+            }
+        ],
+        "暹罗猫": [
+            {
+                "name": "咖啡",
+                "sex": "公",
+                "status": "在校",
+                "color": "重点色",
+                "personality": "粘人话唠，总是喵喵叫个不停",
+                "appearance": "浅棕色身体，四肢、面部、尾巴为深棕色，蓝色眼睛",
+                "location": "文萃校区国际交流中心"
+            }
+        ],
+        "美短猫": [
+            {
+                "name": "美美",
+                "sex": "母",
+                "status": "在校",
+                "color": "银色虎斑",
+                "personality": "聪明机灵，适应能力强",
+                "appearance": "标准美短虎斑纹路，圆脸大眼",
+                "location": "怀远校区生命科学学院"
+            }
+        ],
+        "其他品种": [
+            {
+                "name": "混血儿",
+                "sex": "公",
+                "status": "在校",
+                "color": "混合色",
+                "personality": "个性独特，集多种猫咪优点于一身",
+                "appearance": "花色独特，难以归类",
+                "location": "文萃校区后勤区"
+            },
+            {
+                "name": "小花脸",
+                "sex": "母",
+                "status": "喵星",
+                "color": "多色混合",
+                "personality": "曾是校园明星猫，深受师生喜爱",
+                "appearance": "脸部有独特的花色图案",
+                "location": "文萃校区（已去喵星）"
+            }
+        ]
     },
     "DOG_DATA": {
-        "1": [
-            { "name": "狗1", "sex": "公", "status": "在校" },
-            { "name": "狗2", "sex": "公", "status": "毕业" }
+        "中华田园犬": [
+            {
+                "name": "大黄",
+                "sex": "公",
+                "status": "在校",
+                "color": "黄色",
+                "personality": "忠诚护校，对师生都很友好，是学校的守护犬",
+                "appearance": "中等体型，黄色短毛，耳朵直立，尾巴上卷",
+                "location": "怀远校区校门口"
+            },
+            {
+                "name": "小黑",
+                "sex": "公",
+                "status": "在校",
+                "color": "黑色",
+                "personality": "机警聪明，白天喜欢在校园巡逻",
+                "appearance": "体型健壮，全身黑毛，眼神有神",
+                "location": "文萃校区保卫处附近"
+            },
+            {
+                "name": "花花",
+                "sex": "母",
+                "status": "在校",
+                "color": "花色",
+                "personality": "温顺亲人，经常在食堂附近等待投喂",
+                "appearance": "黑白花色，体型适中，尾巴较长",
+                "location": "文萃校区食堂区域"
+            }
         ],
-        "2": [
-            { "name": "狗3", "sex": "公", "status": "在校" },
-            { "name": "狗4", "sex": "公", "status": "失踪" }
+        "金毛犬": [
+            {
+                "name": "金金",
+                "sex": "公",
+                "status": "在校",
+                "color": "金黄色",
+                "personality": "温柔体贴，喜欢和人互动，是校园里的开心果",
+                "appearance": "金黄色长毛，体型较大，总是面带微笑",
+                "location": "怀远校区操场"
+            },
+            {
+                "name": "暖阳",
+                "sex": "母",
+                "status": "毕业",
+                "color": "浅金色",
+                "personality": "曾陪伴无数学生度过大学时光，性格温暖如阳光",
+                "appearance": "毛色偏浅，眼神温柔",
+                "location": "文萃校区（已被领养）"
+            }
+        ],
+        "拉布拉多": [
+            {
+                "name": "拉拉",
+                "sex": "母",
+                "status": "在校",
+                "color": "黄色",
+                "personality": "活泼好动，精力充沛，喜欢玩飞盘",
+                "appearance": "黄色短毛，体型匀称，肌肉发达",
+                "location": "怀远校区体育场"
+            },
+            {
+                "name": "黑豆",
+                "sex": "公",
+                "status": "在校",
+                "color": "黑色",
+                "personality": "憨厚可爱，总是显得很开心",
+                "appearance": "全身黑色短毛，体型壮实",
+                "location": "文萃校区运动场"
+            }
+        ],
+        "哈士奇": [
+            {
+                "name": "二哈",
+                "sex": "公",
+                "status": "在校",
+                "color": "黑白色",
+                "personality": "活泼搞怪，经常做出让人捧腹的表情和动作",
+                "appearance": "黑白双色，蓝眼睛，面部有独特的三火纹路",
+                "location": "怀远校区宿舍区"
+            },
+            {
+                "name": "雪儿",
+                "sex": "母",
+                "status": "失踪",
+                "color": "灰白色",
+                "personality": "曾是校园明星犬，喜欢在雪地里奔跑",
+                "appearance": "灰白色毛发，眼睛一蓝一棕",
+                "location": "文萃校区（已失踪）"
+            }
+        ],
+        "柯基犬": [
+            {
+                "name": "小短腿",
+                "sex": "公",
+                "status": "在校",
+                "color": "黄白色",
+                "personality": "活泼可爱，虽然腿短但跑得很快",
+                "appearance": "黄白双色，腿短身长，大耳朵",
+                "location": "文萃校区林荫道"
+            }
+        ],
+        "泰迪犬": [
+            {
+                "name": "巧克力",
+                "sex": "母",
+                "status": "在校",
+                "color": "棕色",
+                "personality": "聪明伶俐，喜欢学习各种小技能",
+                "appearance": "巧克力色卷毛，体型小巧玲珑",
+                "location": "文萃校区宠物角"
+            },
+            {
+                "name": "小白云",
+                "sex": "公",
+                "status": "在校",
+                "color": "白色",
+                "personality": "温顺粘人，像个小天使",
+                "appearance": "纯白色卷毛，眼睛圆溜溜",
+                "location": "怀远校区艺术学院"
+            }
+        ],
+        "边牧犬": [
+            {
+                "name": "黑贝",
+                "sex": "公",
+                "status": "在校",
+                "color": "黑白色",
+                "personality": "聪明绝顶，据说智商最高的校园犬",
+                "appearance": "黑白双色，毛发浓密，眼神专注",
+                "location": "怀远校区训练场"
+            }
+        ],
+        "其他品种": [
+            {
+                "name": "串串",
+                "sex": "公",
+                "status": "在校",
+                "color": "混合色",
+                "personality": "性格温和，适应能力强",
+                "appearance": "混血特征明显，独具特色",
+                "location": "文萃校区绿化带"
+            },
+            {
+                "name": "小福气",
+                "sex": "母",
+                "status": "在校",
+                "color": "棕黄色",
+                "personality": "友善可亲，给校园带来欢乐",
+                "appearance": "体型中等，毛色温暖",
+                "location": "怀远校区后花园"
+            }
         ]
     }
 }

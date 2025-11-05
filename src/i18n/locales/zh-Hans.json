@@ -37,5 +37,23 @@
         "openAll": "全部展开",
         "closeAll": "全部收起",
         "description": "代码是写出来给人看的，附带能在机器上运行。"
+    },
+    "animalFields": {
+        "nickname": "昵称",
+        "color": "毛色",
+        "sex": "性别",
+        "status": "状况",
+        "neutered": "绝育情况",
+        "neuteredTime": "绝育时间",
+        "birthTime": "出生时间",
+        "appearTime": "露面时间",
+        "missingTime": "失踪时间",
+        "adoptionTime": "送养时间",
+        "deathReason": "离世原因",
+        "deathTime": "离世时间",
+        "personality": "性格",
+        "appearance": "外貌",
+        "relationship": "关系",
+        "other": "其他"
     }
 }

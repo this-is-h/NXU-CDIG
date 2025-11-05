@@ -37,5 +37,23 @@
         "openAll": "全部展開",
         "closeAll": "全部收起",
         "description": "代碼是寫出來給人看的，附帶能在機器上運行。"
+    },
+    "animalFields": {
+        "nickname": "暱稱",
+        "color": "毛色",
+        "sex": "性別",
+        "status": "狀況",
+        "neutered": "絕育情況",
+        "neuteredTime": "絕育時間",
+        "birthTime": "出生時間",
+        "appearTime": "露面時間",
+        "missingTime": "失踪時間",
+        "adoptionTime": "送養時間",
+        "deathReason": "離世原因",
+        "deathTime": "離世時間",
+        "personality": "性格",
+        "appearance": "外貌",
+        "relationship": "關係",
+        "other": "其他"
     }
 }

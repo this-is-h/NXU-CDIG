@@ -37,5 +37,23 @@
         "openAll": "Open All",
         "closeAll": "Close All",
         "description": "Code is written for humans to read, and only incidentally for machines to execute."
+    },
+    "animalFields": {
+        "nickname": "Nickname",
+        "color": "Color",
+        "sex": "Sex",
+        "status": "Status",
+        "neutered": "Neutered",
+        "neuteredTime": "Neutered Time",
+        "birthTime": "Birth Time",
+        "appearTime": "First Seen",
+        "missingTime": "Missing Time",
+        "adoptionTime": "Adoption Time",
+        "deathReason": "Death Reason",
+        "deathTime": "Death Time",
+        "personality": "Personality",
+        "appearance": "Appearance",
+        "relationship": "Relationship",
+        "other": "Other"
     }
 }

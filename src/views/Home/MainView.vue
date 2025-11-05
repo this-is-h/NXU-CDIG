@@ -4,6 +4,7 @@ import { useI18n } from 'vue-i18n'
 import SvgIcon from '@jamescoyle/vue-icon'
 import { mdiCat, mdiDog } from '@mdi/js'
 import { getPetsData } from '@/data/animals'
+import AnimalContent from '@/components/AnimalContent.vue'
 
 const { locale } = useI18n()
 
@@ -128,7 +129,7 @@ watch(locale, (newLocale) => {
                                         </van-tag>
                                     </div>
                                 </template>
-                                {{ $t('pets.description') }}
+                                <AnimalContent :data="item" />
                             </van-collapse-item>
                         </van-collapse>
                     </div>
@@ -185,7 +186,7 @@ watch(locale, (newLocale) => {
                                         </van-tag>
                                     </div>
                                 </template>
-                                {{ $t('pets.description') }}
+                                <AnimalContent :data="item" />
                             </van-collapse-item>
                         </van-collapse>
                     </div>
