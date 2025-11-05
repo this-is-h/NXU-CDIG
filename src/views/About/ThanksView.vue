@@ -1,5 +1,8 @@
 <script setup>
 import { ref } from 'vue'
+import SvgIcon from '@jamescoyle/vue-icon'
+import { mdiGithub } from '@mdi/js'
+
 import bdmxImg from '@/assets/img/bdmx.jpg'
 import hImg from '@/assets/img/h.png'
 import gzhLargeImg from '@/assets/img/gzh-large.png'
@@ -144,6 +147,17 @@ const dialogH = ref(false)
                 </template>
             </van-cell>
             <van-cell
+                title="Github"
+                label="GitHub is where people build software. More than 150 million people use GitHub to discover, fork, and contribute to over 420 million projects."
+                url="https://github.com/"
+                center
+                is-link
+            >
+                <template #icon>
+                    <svg-icon style="margin-right: 10px" type="mdi" :path="mdiGithub" />
+                </template>
+            </van-cell>
+            <van-cell
                 title="Vercel"
                 label="Vercel provides the developer tools and cloud infrastructure to build, scale, and secure a faster, more personalized web."
                 url="https://vercel.com/"
@@ -154,7 +168,7 @@ const dialogH = ref(false)
                     <svg
                         style="margin-right: 10px"
                         aria-label="Vercel Logo"
-                        fill="var(--geist-foreground)"
+                        fill="var(--van-doc-text-color-1)"
                         class="logo"
                         viewBox="0 0 96 96"
                         width="24"
