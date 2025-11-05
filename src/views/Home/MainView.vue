@@ -3,7 +3,7 @@ import { ref, computed, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 import SvgIcon from '@jamescoyle/vue-icon'
 import { mdiCat, mdiDog } from '@mdi/js'
-import { getPetsData } from '@/data/pets'
+import { getPetsData } from '@/data/animals'
 
 const { locale } = useI18n()
 
@@ -113,8 +113,8 @@ watch(locale, (newLocale) => {
                                     <div class="item-title">
                                         <van-image
                                             round
-                                            width="2.5em"
-                                            height="2.5em"
+                                            width="3em"
+                                            height="3em"
                                             :src="CAT_IMAGE_URL"
                                             class="item-avatar"
                                         >
@@ -155,7 +155,7 @@ watch(locale, (newLocale) => {
                         @click="toggleAllDogTabs"
                         class="toggle-button"
                     >
-                        {{ catTabsAllOpen ? $t('pets.closeAll') : $t('pets.openAll') }}
+                        {{ dogTabsAllOpen ? $t('pets.closeAll') : $t('pets.openAll') }}
                     </van-button>
                 </div>
                 <div class="content-wrapper">
@@ -261,6 +261,7 @@ watch(locale, (newLocale) => {
 }
 
 .item-name {
+    font-weight: bold;
     margin-right: 5px;
 }
 </style>

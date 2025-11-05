@@ -1,0 +1,50 @@
+{
+    "STATUS_CONFIG": {
+        "在校": { "type": "success" },
+        "毕业": { "type": "primary" },
+        "失踪": { "type": "warning" },
+        "喵星": { "color": "grey" }
+    },
+    "CAT_TYPE_LIST": [
+        "纯色",
+        "其他",
+        "其他",
+        "其他",
+        "其他",
+        "其他",
+        "其他",
+        "其他",
+        "其他",
+        "其他",
+        "其他",
+        "其他"
+    ],
+    "DOG_TYPE_LIST": ["1", "2"],
+    "CAT_DATA": {
+        "纯色": [
+            { "name": "1", "sex": "公", "status": "在校" },
+            { "name": "2", "sex": "公", "status": "毕业" },
+            { "name": "3", "sex": "公", "status": "失踪" },
+            { "name": "4", "sex": "公", "status": "喵星" },
+            { "name": "1", "sex": "公", "status": "在校" },
+            { "name": "2", "sex": "公", "status": "毕业" },
+            { "name": "3", "sex": "公", "status": "失踪" },
+            { "name": "4", "sex": "公", "status": "喵星" },
+            { "name": "1", "sex": "公", "status": "在校" },
+            { "name": "2", "sex": "公", "status": "毕业" },
+            { "name": "3", "sex": "公", "status": "失踪" },
+            { "name": "4", "sex": "公", "status": "喵星" }
+        ],
+        "其他": [{ "name": "其他", "sex": "公", "status": "在校" }]
+    },
+    "DOG_DATA": {
+        "1": [
+            { "name": "狗1", "sex": "公", "status": "在校" },
+            { "name": "狗2", "sex": "公", "status": "毕业" }
+        ],
+        "2": [
+            { "name": "狗3", "sex": "公", "status": "在校" },
+            { "name": "狗4", "sex": "公", "status": "失踪" }
+        ]
+    }
+}

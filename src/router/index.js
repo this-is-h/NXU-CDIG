@@ -52,19 +52,28 @@ const router = createRouter({
             path: '/aboutUs',
             name: 'aboutUs',
             component: AboutUsView,
-            meta: { isRootPage: false },
+            meta: {
+                isRootPage: false,
+                parentRoute: '/about',
+            },
         },
         {
             path: '/qa',
             name: 'qa',
             component: QAView,
-            meta: { isRootPage: false },
+            meta: {
+                isRootPage: false,
+                parentRoute: '/about',
+            },
         },
         {
             path: '/thanks',
             name: 'thanks',
             component: ThanksView,
-            meta: { isRootPage: false },
+            meta: {
+                isRootPage: false,
+                parentRoute: '/about',
+            },
         },
     ],
 })

@@ -97,7 +97,7 @@ const languageOnConfirm = ({ selectedOptions }) => {
                 padding: 1em;
             "
         >
-            <van-image round width="30%" src="/favicon.png" />
+            <van-image round width="30%" src="/src/assets/img/h.png" />
             NXU - CDIG
         </div>
         <van-cell-group inset>

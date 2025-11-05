@@ -112,7 +112,7 @@ const showBackButton = computed(() => {
 // 自定义返回逻辑
 const comeBack = () => {
     if (route.meta.parentRoute) {
-        router.push(route.meta.parentRoute)
+        router.replace(route.meta.parentRoute)
     } else {
         router.back()
     }
@@ -130,7 +130,12 @@ watch(
             activeView.value = 'home'
         } else if (newPath.startsWith('/community')) {
             activeView.value = 'community'
-        } else if (newPath.startsWith('/about')) {
+        } else if (
+            newPath.startsWith('/about') ||
+            newPath.startsWith('/thanks') ||
+            newPath.startsWith('/qa') ||
+            newPath.startsWith('/aboutUs')
+        ) {
             activeView.value = 'about'
         }
     },
